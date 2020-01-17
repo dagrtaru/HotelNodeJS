@@ -1,25 +1,38 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import Hotel from './components/Hotel';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  
+  state = {
+    hotels : [
+      {
+        id : 1,
+        name : "Hotel 1",
+        location : "Guwahati",
+        rating : "4.4"
+      },
+      {
+        id : 2,
+        name : "Hotel 2",
+        location : "Kolkata",
+        rating : "4.2"
+      },
+      {
+        id : 3,
+        name : "Hotel 3",
+        location : "Saltlake",
+        rating : "4.3"
+      }
+    ]
+  }
+  
+  render() {
+    return (
+      <div>
+        <Hotel hotels={this.state.hotels}/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
