@@ -9,19 +9,19 @@ export class App extends Component {
         id : 1,
         name : "Hotel 1",
         location : "Guwahati",
-        rating : "4.4"
+        rating : "4.4",
       },
       {
         id : 2,
         name : "Hotel 2",
         location : "Kolkata",
-        rating : "4.2"
+        rating : "4.2",
       },
       {
         id : 3,
         name : "Hotel 3",
         location : "Saltlake",
-        rating : "4.3"
+        rating : "4.3",
       }
     ]
   }
@@ -29,6 +29,7 @@ export class App extends Component {
   render() {
     return (
       <div>
+        <h1 style= {{textAlign : "center"}}>Hotel App</h1>
         <Hotel hotels={this.state.hotels}/>
       </div>
     )
