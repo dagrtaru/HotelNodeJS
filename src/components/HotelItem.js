@@ -17,14 +17,31 @@ export class HotelItem extends Component {
         }
     }
 
+    style1 = () => {
+        return {
+            visibility : this.props.hotel.selected ? "visible" : "hidden" 
+        }
+    }
+
+    style2 = () => {
+        return {
+            visibility : this.props.hotel.selected ? "hidden" : "visible"
+        }
+    }
+
     render() {
         return (
             <div style={styleMain}>
                 <div className="card" style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
-                    <p>Name: {this.props.hotel.name}</p>
-                    <p>Location: {this.props.hotel.location}</p>
-                    <p>Rating: {this.props.hotel.rating}</p>
-                    <img src = {Forest} alt="A Forest"/>
+                    <div style={this.style1()}>
+                        <p>Name: {this.props.hotel.name}</p>
+                        <p>Location: {this.props.hotel.location}</p>
+                        <p>Rating: {this.props.hotel.rating}</p>
+                    </div>
+                    <div style={this.style2()}>
+                        <img src = {Forest} alt="A Forest"/>
+                        <p>Location: {this.props.hotel.location}</p>
+                    </div>
                 </div>
             </div>
         )
