@@ -32,7 +32,7 @@ export class App extends Component {
   toggleSelected = (id) => {
     this.setState({ hotels : this.state.hotels.map((hotel) => {
       if(hotel.id === id){
-        hotel.completed = !hotel.completed
+        hotel.selected = !hotel.selected
       }
       return hotel;
     }) });
