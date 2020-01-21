@@ -13,7 +13,7 @@ export class HotelItem extends Component {
     render() {
         return (
             <div style={styleMain}>
-                <div style={styleHotel} onClick= {this.setChange}>
+                <div className="card" style={styleHotel} onClick= {this.props.toggleSelected}>
                     <p>Name: {this.props.hotel.name}</p>
                     <p>Location: {this.props.hotel.location}</p>
                     <p>Rating: {this.props.hotel.rating}</p>
@@ -34,7 +34,7 @@ const styleHotel = {
     margin : "10px",
     border : "2px solid #eee",
     boxShadow : "0 2px 2px #ccc", 
-    background : ({change} === true)?"red":"white",
+    background : "white",
     width : "200px",
     height : "300px",
     padding : "20px",
