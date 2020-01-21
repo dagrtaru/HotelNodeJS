@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import Forest from './../forest.jpg';
 
-let change = false;
 
 export class HotelItem extends Component {
 
-    setChange = () => {
-        change = !change;
-        console.log(change);
+    getStyle = () => {
+        return {
+            display : "inline-block",
+            margin : "10px",
+            border : "2px solid #eee",
+            boxShadow : "0 2px 2px #ccc", 
+            background : this.props.hotel.selected ? "red" : "white",
+            width : "200px",
+            height : "300px",
+            padding : "20px",
+        }
     }
 
     render() {
         return (
             <div style={styleMain}>
-                <div className="card" style={styleHotel} onClick= {this.props.toggleSelected}>
+                <div className="card" style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
                     <p>Name: {this.props.hotel.name}</p>
                     <p>Location: {this.props.hotel.location}</p>
                     <p>Rating: {this.props.hotel.rating}</p>
@@ -27,17 +34,6 @@ export class HotelItem extends Component {
 const styleMain = {
     display : "inline-block",
     textAlign : "center"
-}
-
-const styleHotel = {
-    display : "inline-block",
-    margin : "10px",
-    border : "2px solid #eee",
-    boxShadow : "0 2px 2px #ccc", 
-    background : "white",
-    width : "200px",
-    height : "300px",
-    padding : "20px",
 }
 
 export default HotelItem;
