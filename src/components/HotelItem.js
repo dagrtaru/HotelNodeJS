@@ -18,40 +18,6 @@ export class HotelItem extends Component {
         }
     }
 
-    /*BriefCard = () => {
-        return (
-            <div style={styleMain}>
-                <div style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
-                        <div>
-                            <p>Name: {this.props.hotel.name}</p>
-                            <img src = {Forest} alt="A Forest"/>
-                            <p>Location: {this.props.hotel.location}</p>
-                            <p>Rating: {this.props.hotel.rating}</p>
-                        </div>
-                </div>
-            </div>
-        )
-    }
-
-    DetailedCard = (props) => {
-        return (
-            <div style={styleMain}>
-                <div style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
-                        <div>
-                            <p>{this.props.hotel.story}</p>
-                        </div>
-                </div>
-            </div>
-        )
-    }
-
-    function Card(){
-        if(this.props.hotel.selected){
-            return <DetailedCard />
-        }
-        return <BriefCard />
-    }*/
-
     render() {
         return (
             <div style={styleMain}>
