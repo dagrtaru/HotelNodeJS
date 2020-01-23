@@ -6,42 +6,68 @@ export class HotelItem extends Component {
 
     getStyle = () => {
         return {
+            fontFamily : "arial",
             display : "inline-block",
             margin : "10px",
             border : "2px solid #eee",
             boxShadow : "0 2px 2px #ccc", 
-            background : this.props.hotel.selected ? "red" : "white",
+            background : this.props.hotel.selected ? "#D3D3D3" : "white",
             width : "200px",
             height : "300px",
             padding : "20px",
         }
     }
 
-    style1 = () => {
-        return {
-            visibility : this.props.hotel.selected ? "visible" : "hidden" 
-        }
+    /*BriefCard = () => {
+        return (
+            <div style={styleMain}>
+                <div style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
+                        <div>
+                            <p>Name: {this.props.hotel.name}</p>
+                            <img src = {Forest} alt="A Forest"/>
+                            <p>Location: {this.props.hotel.location}</p>
+                            <p>Rating: {this.props.hotel.rating}</p>
+                        </div>
+                </div>
+            </div>
+        )
     }
 
-    style2 = () => {
-        return {
-            visibility : this.props.hotel.selected ? "hidden" : "visible"
-        }
+    DetailedCard = (props) => {
+        return (
+            <div style={styleMain}>
+                <div style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
+                        <div>
+                            <p>{this.props.hotel.story}</p>
+                        </div>
+                </div>
+            </div>
+        )
     }
+
+    function Card(){
+        if(this.props.hotel.selected){
+            return <DetailedCard />
+        }
+        return <BriefCard />
+    }*/
 
     render() {
         return (
             <div style={styleMain}>
-                <div className="card" style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
-                    <div style={this.style1()}>
-                        <p>Name: {this.props.hotel.name}</p>
-                        <p>Location: {this.props.hotel.location}</p>
-                        <p>Rating: {this.props.hotel.rating}</p>
-                    </div>
-                    <div style={this.style2()}>
-                        <img src = {Forest} alt="A Forest"/>
-                        <p>Location: {this.props.hotel.location}</p>
-                    </div>
+                <div style={this.getStyle()} onClick= {this.props.toggleSelected.bind(this, this.props.hotel.id)}>
+                        {
+                            this.props.hotel.selected ?
+                            <div>
+                                <p>{this.props.hotel.story}</p>
+                            </div> : 
+                            <div>
+                                <p>Name: {this.props.hotel.name}</p>
+                                <img src = {Forest} alt="A Forest"/>
+                                <p>Location: {this.props.hotel.location}</p>
+                                <p>Rating: {this.props.hotel.rating}</p>
+                            </div>
+                        }
                 </div>
             </div>
         )
