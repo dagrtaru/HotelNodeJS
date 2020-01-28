@@ -8,7 +8,7 @@ export class AddHotel extends Component {
 
     onSubmit = (e) => {
         this.preventDefault();
-        this.props.addTodo(this.state.title);
+        this.props.addHotel(this.state.title);
         this.setState({title : ""});
     }
 
