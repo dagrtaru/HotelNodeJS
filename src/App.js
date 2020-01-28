@@ -42,8 +42,8 @@ export class App extends Component {
     }) });
   }
   
-  addHotel = (title) => {
-    this.setState({hotels : [...this.state.hotels, title]});
+  addHotel = (obj) => {
+    this.setState({hotels : [...this.state.hotels, obj]});
   }
 
   render() {
