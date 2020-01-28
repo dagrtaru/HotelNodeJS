@@ -5,10 +5,20 @@ export class AddHotel extends Component {
     state = {
         title : ""
     }
+    
+    title = "";
+    location = "";
+    rating = "";
+
+    obj = {
+        title : this.title,
+        location : this.location,
+        rating : this.rating
+    }
 
     onSubmit = (e) => {
         this.preventDefault();
-        this.props.addHotel(this.state.title);
+        this.props.addHotel(this.obj);
         this.setState({title : ""});
     }
 
@@ -20,7 +30,11 @@ export class AddHotel extends Component {
         return (
             <form style={{ display: 'flex' }} onSubmit={this.onSubmit}>
                 <input type="text" name="title" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add Hotel..." value={this.state.title} onChange={this.onChange}/>
+                placeholder="Add Title..." value={this.title} onChange={this.onTitleChange}/>
+                <input type="text" name="title" style={{flex : "10", padding : "5px"}} 
+                placeholder="Add location..." value={this.location} onChange={this.onTitleChange}/>
+                <input type="text" name="title" style={{flex : "10", padding : "5px"}} 
+                placeholder="Add rating..." value={this.rating} onChange={this.onTitleChange}/>
                 <input type="submit" value="Submit" className="btn" style={{flex : "1"}} />
             </form>
         )
