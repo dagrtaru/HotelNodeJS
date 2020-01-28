@@ -13,7 +13,7 @@ export class AddHotel extends Component {
     }
 
     onChange = (e) => {
-        e.setState({title : e.target.value});
+        this.setState({title : e.target.value});
     }
 
     render() {
