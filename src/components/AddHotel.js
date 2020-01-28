@@ -6,6 +6,10 @@ export class AddHotel extends Component {
         title : ""
     }
 
+    onChange = (e) =>{
+        this.setState({title : e.target.value});
+    }
+
     render() {
         return (
             <form style={{ display: 'flex' }}>
