@@ -42,11 +42,15 @@ export class App extends Component {
     }) });
   }
   
+  addHotel = (title) => {
+    this.setState({hotels : [...this.state.hotels, title]});
+  }
+
   render() {
     return (
       <div>
         <h1 style= {{fontFamily : "arial", textAlign : "center"}}>Hotel App</h1>
-        <AddHotel />
+        <AddHotel addHotel={this.addHotel}/>
         <Hotel hotels={this.state.hotels} toggleSelected={this.toggleSelected}/>
       </div>
     )
