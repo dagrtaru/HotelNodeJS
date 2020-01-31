@@ -5,7 +5,7 @@ export class AddHotel extends Component {
     state = {
         title : "",
         location : "",
-        rating : ""
+        rating : "",
     }
     
     title = "";
@@ -32,7 +32,7 @@ export class AddHotel extends Component {
         this.setState({location : e.target.value});
     }
 
-    onRatingChage = (e) => {
+    onRatingChange = (e) => {
         this.setState({rating : e.target.value});
     }
 
@@ -40,11 +40,11 @@ export class AddHotel extends Component {
         return (
             <form style={{ display: 'flex' }} onSubmit={this.onSubmit}>
                 <input type="text" name="title" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add Title..." onChange={this.onTitleChange}/>
+                placeholder="Add Title..." value={this.state.title} onChange={this.onTitleChange}/>
                 <input type="text" name="location" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add location..." onChange={this.onLocationChange}/>
-                <input type="text" name="location" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add rating..." onChange={this.onRatingChange}/>
+                placeholder="Add location..." value={this.state.location} onChange={this.onLocationChange}/>
+                <input type="text" name="rating" style={{flex : "10", padding : "5px"}} 
+                placeholder="Add rating..." value={this.state.rating} onChange={this.onRatingChange}/>
                 <input type="submit" value="Submit" className="btn" style={{flex : "1"}} />
             </form>
         )
