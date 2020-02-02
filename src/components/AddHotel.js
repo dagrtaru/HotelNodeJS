@@ -10,9 +10,9 @@ export class AddHotel extends Component {
     
 
     onSubmit = (e) => {
-        this.preventDefault();
-        this.props.addHotel(this.obj);
-        this.setState({title : ""});
+        e.preventDefault();
+        this.props.addHotel(this.state.title, this.state.location, this.state.rating);
+        this.setState({ title : "", location : "", rating : "" });
     }
 
     onChange = (e) => {
