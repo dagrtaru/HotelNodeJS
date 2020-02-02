@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Hotel from './components/Hotel';
 import AddHotel from './components/AddHotel';
 
+let n = 4;
+
 export class App extends Component {
   
   state = {
@@ -42,8 +44,15 @@ export class App extends Component {
     }) });
   }
   
-  addHotel = (obj) => {
-    this.setState({hotels : [...this.state.hotels, obj]});
+  addHotel = (title, location, rating) => {
+    const newHotel = {
+      id : this.n,
+      name : title,
+      location : location,
+      rating : rating
+    }
+    this.setState({hotels : [...this.state.hotels, newHotel]});
+    n = n + 1;
   }
 
   render() {
