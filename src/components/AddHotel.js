@@ -8,15 +8,6 @@ export class AddHotel extends Component {
         rating : "",
     }
     
-    title = "";
-    location = "";
-    rating = "";
-
-    obj = {
-        title : this.title,
-        location : this.location,
-        rating : this.rating
-    }
 
     onSubmit = (e) => {
         this.preventDefault();
@@ -24,27 +15,19 @@ export class AddHotel extends Component {
         this.setState({title : ""});
     }
 
-    onTitleChange = (e) => {
-        this.setState({title : e.target.value});
-    }
-
-    onLocationChange = (e) => {
-        this.setState({location : e.target.value});
-    }
-
-    onRatingChange = (e) => {
-        this.setState({rating : e.target.value});
+    onChange = (e) => {
+        this.setState({ [e.target.name] : e.target.value });
     }
 
     render() {
         return (
             <form style={{ display: 'flex' }} onSubmit={this.onSubmit}>
                 <input type="text" name="title" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add Title..." value={this.state.title} onChange={this.onTitleChange}/>
+                placeholder="Add Title..." value={this.state.title} onChange={this.onChange}/>
                 <input type="text" name="location" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add location..." value={this.state.location} onChange={this.onLocationChange}/>
+                placeholder="Add location..." value={this.state.location} onChange={this.onChange}/>
                 <input type="text" name="rating" style={{flex : "10", padding : "5px"}} 
-                placeholder="Add rating..." value={this.state.rating} onChange={this.onRatingChange}/>
+                placeholder="Add rating..." value={this.state.rating} onChange={this.onChange}/>
                 <input type="submit" value="Submit" className="btn" style={{flex : "1"}} />
             </form>
         )
