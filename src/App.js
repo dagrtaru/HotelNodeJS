@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Hotel from './components/Hotel';
 import AddHotel from './components/AddHotel';
 
-let n = 4;
+let hotel_number = 4;
 
 export class App extends Component {
   
@@ -46,13 +46,13 @@ export class App extends Component {
   
   addHotel = (title, location, rating) => {
     const newHotel = {
-      id : this.n,
+      id : hotel_number,
       name : title,
       location : location,
       rating : rating
     }
     this.setState({hotels : [...this.state.hotels, newHotel]});
-    n = n + 1;
+    hotel_number += 1;
   }
 
   render() {
